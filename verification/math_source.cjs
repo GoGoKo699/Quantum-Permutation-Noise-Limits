@@ -34,6 +34,7 @@ function checkSource(file,source){
   if(/^\s*\$\$\s*$/m.test(source))throw new Error('Legacy display delimiters: '+file);
   for(const item of list){
     if(/\\operatorname\b/.test(item.tex))throw new Error('GitHub rejected operatorname: '+file+':'+item.line);
+    if(item.kind==='display' && item.tex.includes('<'))throw new Error('Raw less-than can be consumed by GitHub HTML processing: '+file+':'+item.line);
     if(item.kind==='inline' && item.tex.includes('|'))throw new Error('Inline TeX bar can split Markdown table: '+file+':'+item.line);
   }
   const counts=[list.filter(x=>x.kind==='display').length,list.filter(x=>x.kind==='inline').length];

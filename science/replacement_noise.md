@@ -11,7 +11,7 @@ Let $`\mathcal A`$ be a qubit CPTP map admitting
 ```math
 \begin{aligned}
 \mathcal A&=(1-q)\mathcal M+q\mathcal R_\sigma,\\
-\mathcal R_\sigma(X)&=\mathrm{Tr}(X)\sigma,\quad 0<q\le1.
+\mathcal R_\sigma(X)&=\mathrm{Tr}(X)\sigma,\quad 0\lt q\le1.
 \end{aligned}
 ```
 with $`\mathcal M`$ CPTP and $`\sigma`$ a fixed output density matrix. This is a CP decomposition, not a decomposition of a particular input state. Identical independent copies of $`\mathcal A`$ act on all $`n`$ positions after the inaccessible permutation twirl.

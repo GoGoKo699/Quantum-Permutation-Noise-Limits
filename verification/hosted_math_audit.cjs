@@ -54,7 +54,8 @@ function inspect(root,expected){
   return {renderers:nodes.length,native_math:root.querySelectorAll('math-renderer math').length,comparisons,unrendered,errors,table_columns:[...root.querySelectorAll('tr')].map(r=>r.children.length)};
 }
 function tableColumns(source){
-  return source.split('\n').filter(l=>l.startsWith('|')&&!/^\|[\s:|\-]+$/.test(l)).map(l=>l.split('|').length-2);
+  const prose=source.replace(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm,'');
+  return prose.split('\n').filter(l=>l.startsWith('|')&&!/^\|[\s:|\-]+$/.test(l)).map(l=>l.split('|').length-2);
 }
 
 (async()=>{

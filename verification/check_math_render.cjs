@@ -3,6 +3,7 @@
 // Syntax/coverage checks precede the separate real-GitHub browser audit.
 const fs=require('node:fs');
 const path=require('node:path');
+const assert=require('node:assert/strict');
 const {ROOT,trackedPages,checkSource,mathJax}=require('./math_source.cjs');
 const renderer=mathJax();
 let displays=0,inline=0,maxWidth=0;
@@ -26,5 +27,24 @@ for(const file of trackedPages()){
   }
 }
 if(displays!==67||inline!==402)throw new Error('Incomplete source coverage');
+
+// Negative regression checks for the three defects observed on the live host.
+const readme=fs.readFileSync(path.join(ROOT,'README.md'),'utf8');
+const raw=readme.replace('$`n`$','$n$');
+assert.notEqual(raw,readme);
+assert.throws(()=>checkSource('README.md',raw),/Unprotected inline/);
+const model=fs.readFileSync(path.join(ROOT,'science/model.md'),'utf8');
+const blocked=model.replace('\\mathrm{Tr}','\\operatorname{Tr}');
+assert.notEqual(blocked,model);
+assert.throws(()=>checkSource('science/model.md',blocked),/GitHub rejected operatorname/);
+const bridge=fs.readFileSync(path.join(ROOT,'learning/WATROUS_BRIDGE.md'),'utf8');
+const splitTable=bridge.replace('\\vert ','|');
+assert.notEqual(splitTable,bridge);
+assert.throws(()=>checkSource('learning/WATROUS_BRIDGE.md',splitTable),/Inline TeX bar/);
+
+const replacement=fs.readFileSync(path.join(ROOT,'science/replacement_noise.md'),'utf8');
+const truncated=replacement.replace('\\lt q','<q');
+assert.notEqual(truncated,replacement);
+assert.throws(()=>checkSource('science/replacement_noise.md',truncated),/Raw less-than/);
 console.log(`PASS: ${displays} displays and ${inline} protected inline expressions; no known GitHub-blocked macros or raw table bars; maximum width ${maxWidth.toFixed(2)} em.`);
 console.log('This source test is not a hosted-rendering certificate; run hosted_math_audit.cjs for that.');

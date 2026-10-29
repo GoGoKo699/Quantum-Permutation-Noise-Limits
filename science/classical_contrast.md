@@ -8,7 +8,7 @@ Take the depolarizing local channel $`\mathcal D_q(\rho)=(1-q)\rho+qI_2/2`$ with
 
 ```math
 \rho_{\mathbf r}=\frac12(I+\mathbf r\cdot\boldsymbol\sigma),
-\qquad \|\mathbf r\|\le r_0<1.
+\qquad \|\mathbf r\|\le r_0\lt 1.
 ```
 Alice encodes a classical message by choosing a Bloch vector $`\mathbf r`$ from a three-dimensional grid inside a fixed small cube and preparing $`\rho_{\mathbf r}^{\otimes n}`$. This product state is already permutation invariant, so the inaccessible twirl has **no effect**. Bob receives
 
