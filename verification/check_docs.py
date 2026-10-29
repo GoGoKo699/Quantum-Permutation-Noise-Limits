@@ -1,0 +1,49 @@
+"""Check the shared learning map, source routes and GitHub math delimiters.
+
+Run from the repository root: python verification/check_docs.py
+This is a source-integrity check, not a substitute for inspecting hosted rendering.
+"""
+from __future__ import annotations
+
+import re
+from pathlib import Path
+from urllib.parse import unquote
+
+ROOT = Path(__file__).resolve().parents[1]
+milestones = (ROOT / "learning/MILESTONES.md").read_text(encoding="utf-8")
+bridge = (ROOT / "learning/WATROUS_BRIDGE.md").read_text(encoding="utf-8")
+readme = (ROOT / "README.md").read_text(encoding="utf-8")
+llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+ids = re.findall(r"^### (M\d{2}) — ", milestones, flags=re.M)
+assert ids == [f"M{i:02d}" for i in range(1, 31)], f"Milestone IDs: {ids}"
+bg = milestones.split("## Background/preliminaries", 1)[1].split("## Narrative/innovation", 1)[0]
+nv = milestones.split("## Narrative/innovation", 1)[1].split("## Completion boundary", 1)[0]
+assert len(re.findall(r"^### M\d{2} — ", bg, flags=re.M)) == 12
+assert len(re.findall(r"^### M\d{2} — ", nv, flags=re.M)) == 18
+for part in re.split(r"(?=^### M\d{2} — )", milestones, flags=re.M)[1:]:
+    for field in ("Central question", "Understanding target", "Dependencies",
+                  "Story role and conceptual connection", "Anchor source",
+                  "Canonical scientific account", "Phase"):
+        assert f"**{field}:**" in part, (part[:20], field)
+assert "John Watrous" in bridge and "2018" in bridge
+assert "John Watrous" in readme and "learning/MILESTONES.md" in readme
+assert "learning/WATROUS_BRIDGE.md" in llms
+assert "Coaching guide" not in milestones and "Revise → Learn → Test" not in milestones
+md_files = list(ROOT.rglob("*.md"))
+count = 0
+for file in md_files:
+    body = file.read_text(encoding="utf-8")
+    for raw in re.findall(r"\[[^\]]+\]\(([^)]+)\)", body):
+        if raw.startswith(("https://", "http://", "mailto:")) or raw.startswith("#"):
+            continue
+        dest = unquote(raw.split("#", 1)[0])
+        if not dest:
+            continue
+        target = (file.parent / dest).resolve()
+        assert target.is_relative_to(ROOT), (file, dest)
+        assert target.is_file(), (file.relative_to(ROOT), dest)
+        count += 1
+    # GitHub displays block math using paired $$ lines, not isolated $ lines.
+    assert not re.search(r"(?m)^\$$", body), f"Single-dollar display delimiter: {file}"
+    assert body.count("$$") % 2 == 0, f"Unpaired display math: {file}"
+print(f"PASS: 30 milestones (12+18), Watrous bridge, {count} internal Markdown links, math delimiters")

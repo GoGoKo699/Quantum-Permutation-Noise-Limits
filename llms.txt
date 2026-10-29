@@ -13,6 +13,12 @@ Authoritative scientific routes:
 - Constructive classical-message growth and output-dimension upper bound: science/classical_contrast.md
 - Physical story, crossover and scope: science/interpretation.md
 
+Shared learning routes (single anchor: John Watrous, The Theory of Quantum Information, 2018):
+- Source sections and translation to this project: learning/WATROUS_BRIDGE.md
+- Fixed 30-milestone background/narrative map: learning/MILESTONES.md
+- Worked physical examples: learning/WORKED_EXAMPLES.md
+- Personal coaching rules and learner progress are outside this repository.
+
 Source and evidence routes:
 - Closest primary literature and inherited contributions: references/RELATED_WORK.md
 - Structured citations: references/references.bib

@@ -52,7 +52,11 @@ Start with the [model and operational conventions](science/model.md), then the [
 | What is inherited and what differs from prior work | [Related work](references/RELATED_WORK.md) and [bibliography](references/references.bib) |
 | Reproduce finite Choi and rate checks | [Verification](verification/README.md) |
 
-The [science index](science/README.md) provides a connected reading route. The repository's shared educational route is furnished separately after selection of one verified source.
+The [science index](science/README.md) provides a connected reading route. ## Learn the project
+
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [Watrous bridge](learning/WATROUS_BRIDGE.md) maps exact sections and notation to the proof dependencies and makes clear which results go beyond the textbook. The [30-milestone map](learning/MILESTONES.md) has **12 background** and **18 narrative/innovation** understanding targets, independent of any learner's progress. The [worked examples](learning/WORKED_EXAMPLES.md) explain the two-qubit case, finite erasure capacities, adaptive fidelity, and classical contrast.
+
+This common map is not a personalized coaching guide or a record of tutorial attempts.
 
 ## Reproduce
 
