@@ -1,0 +1,29 @@
+# Quantum Permutation Noise Limits — scientific navigation
+
+Scientific question: quantum communication through n qubits after an unrecorded uniform permutation and independent local noise. Distinguish coherent quantum capacity from zero-error classical message counts. Rates are per complete block, not per physical qubit.
+
+Start: README.md and science/README.md.
+
+Authoritative scientific routes:
+- Model, exact resource and channel assumptions: science/model.md
+- All-spin-sector Schur–Weyl and singlet-padding channel identity, including references: science/schur_reduction.md
+- Symmetric partial trace, Choi spectrum, EB CP comparator and covariant simulation: science/symmetric_loss.md
+- Exact two-way and unassisted flagged-erasure capacity proofs: science/erasure_capacities.md
+- Replacer-containing local noise, CP order, adaptive strong-converse fidelity: science/replacement_noise.md
+- Constructive classical-message growth and output-dimension upper bound: science/classical_contrast.md
+- Physical story, crossover and scope: science/interpretation.md
+
+Source and evidence routes:
+- Closest primary literature and inherited contributions: references/RELATED_WORK.md
+- Structured citations: references/references.bib
+- Numerical checks, commands, scope and local observations: verification/README.md and verification/checks.py
+
+Critical distinctions:
+- Full physical twirl acts on the transmitted register, not jointly on the reference.
+- Symmetric inputs are optimal for the erasure benchmark, but the converse covers arbitrary encoders.
+- f_n(q) is the exact two-way capacity of flagged erasure and an upper bound for replacer-containing noise.
+- log2 K_n(q) gives a strong-converse fidelity threshold, not necessarily the true capacity.
+- The exact unassisted formula is for flagged erasure; the depolarizing capacity is not determined.
+- Fixed positive q and q scaling like c/n have different limits.
+- Symmetric loss/resource identities and sector simulation are credited to existing work.
+- Personal coaching instructions and learner records do not belong in this repository.
