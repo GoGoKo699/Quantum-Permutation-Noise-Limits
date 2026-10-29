@@ -1,0 +1,36 @@
+name: Inspect actual GitHub mathematics
+
+on:
+  push:
+    branches:
+      - fix/hosted-math-integrity-20261029
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hosted-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned browser automation
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Inspect public GitHub pages at the exact commit
+        run: node verification/hosted_math_audit.cjs
+      - name: Save rendered HTML, observations and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hosted-math-${{ github.sha }}
+          path: hosted-math-audit/
+          retention-days: 7
+          if-no-files-found: error
