@@ -43,7 +43,10 @@ for file in md_files:
         assert target.is_relative_to(ROOT), (file, dest)
         assert target.is_file(), (file.relative_to(ROOT), dest)
         count += 1
-    # GitHub displays block math using paired $$ lines, not isolated $ lines.
-    assert not re.search(r"(?m)^\$$", body), f"Single-dollar display delimiter: {file}"
-    assert body.count("$$") % 2 == 0, f"Unpaired display math: {file}"
-print(f"PASS: 30 milestones (12+18), Watrous bridge, {count} internal Markdown links, math delimiters")
+    # Render multiline equations as math fences (GitHub's documented syntax).
+    assert not re.search(r"(?m)^\s*\$\$\s*$", body), f"Obsolete double-dollar block: {file}"
+    assert not re.search(r"\\tag\s*\{", body), f"Raw TeX equation tag: {file}"
+    assert not re.search(r"(?m)^\s*\$\s*$", body), f"Single-dollar display delimiter: {file}"
+    assert len(re.findall(r"(?m)^```math$", body)) == len(re.findall(r"(?m)^```$", body)), f"Unpaired math fence: {file}"
+
+print(f"PASS: 30 milestones (12+18), Watrous bridge, {count} internal Markdown links, MathJax-compatible fenced displays")
