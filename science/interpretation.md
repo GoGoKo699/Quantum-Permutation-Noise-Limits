@@ -4,10 +4,9 @@ A block of $n$ labelled qubits can carry $n$ coherent qubits without noise. Comp
 
 The surprising change occurs when **each physical carrier has any fixed positive probability of being replaced or erased**. Under independent replacement noise, the two-way quantum capacity of the entire scrambled block obeys
 
-$$
+```math
 Q_2\le f_n(q)\le\log_2K_n(q)\le-\log_2q.
-$$
-
+```
 For flagged erasure the exact value is $f_n(q)$, and its limit reaches $-\log_2q$. Thus the constant ceiling is a real information-theoretic boundary for the model, not a consequence of a weakly chosen code.
 
 ## The mechanism
@@ -22,11 +21,10 @@ For erasure, classical feedback lets Bob announce which loss count occurred and 
 
 Without free classical feedback, the unassisted rate is
 
-$$
-\lim_{n\to\infty}Q=
-\max\left\{0,\log_2\frac{1-q}{q}\right\}.
-$$
-
+```math
+\lim_{n\to\infty}Q
+=\max\biggl\{0,\log_2\frac{1-q}{q}\biggr\}.
+```
 At $q\ge1/2$, the ordinary quantum capacity is zero even though two-way-assisted entanglement distribution remains positive for every $q<1$. Both rates refer to complete blocks; the rate per carrier vanishes as $n\to\infty$ at fixed $q>0$.
 
 ## Noise strength and block size do not commute

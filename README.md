@@ -18,19 +18,18 @@ Write $\mathcal P_n$ for a fresh unrecorded uniform permutation twirl and $\math
 
 Here
 
-$$
+```math
 K_n(q)=\sum_{a=0}^n(1-q)^a
 =\frac{1-(1-q)^{n+1}}q.
-$$
-
+```
 For every fixed $0<q<1$, the flagged-erasure result is asymptotically sharp:
 
-$$
-\lim_{n\to\infty}Q_2=-\log_2q,
-\qquad
-\lim_{n\to\infty}Q=\max\left\{0,\log_2\frac{1-q}{q}\right\}.
-$$
-
+```math
+\begin{aligned}
+\lim_{n\to\infty} Q_2 &= -\log_2 q,\\
+\lim_{n\to\infty} Q &= \max\biggl\{0,\log_2\frac{1-q}{q}\biggr\}.
+\end{aligned}
+```
 The strong-converse threshold supplied by the fidelity inequality is $\log_2K_n$, which can exceed the tighter finite-$n$ capacity bound $f_n$. The exact depolarizing quantum capacity is **not** claimed.
 
 ## Why the bound covers every encoding
