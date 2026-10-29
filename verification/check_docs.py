@@ -6,6 +6,7 @@ This is a source-integrity check, not a substitute for inspecting hosted renderi
 from __future__ import annotations
 
 import re
+import subprocess
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -29,7 +30,9 @@ assert "John Watrous" in bridge and "2018" in bridge
 assert "John Watrous" in readme and "learning/MILESTONES.md" in readme
 assert "learning/WATROUS_BRIDGE.md" in llms
 assert "Coaching guide" not in milestones and "Revise → Learn → Test" not in milestones
-md_files = list(ROOT.rglob("*.md"))
+md_files = [ROOT / name for name in subprocess.check_output(
+    ["git", "ls-files", "*.md"], cwd=ROOT, text=True
+).splitlines()]
 count = 0
 for file in md_files:
     body = file.read_text(encoding="utf-8")

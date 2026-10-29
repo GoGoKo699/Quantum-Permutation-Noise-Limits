@@ -8,13 +8,13 @@ The comparison concerns the **operational model and theorem**, not whether anoth
 
 Appendix B.1 develops irreducible-sector teleportation simulation; Appendix B.2 gives exact relative entropy of entanglement and reverse hashing for symmetric photon-loss sectors; Appendix G.2 contains the conditional symmetric-loss CP-order comparison. These are substantial inherited ingredients, not new discoveries of this repository. The present account specializes their symmetric-sector geometry to qubits and reconstructs the needed identities in [symmetric loss](../science/symmetric_loss.md).
 
-The paper's channel is a bosonic loss/amplifier channel with an energy constraint. It does not state the theorem for a **physically applied full permutation twirl on arbitrary $n$-qubit inputs**, followed by independent qubit noise. The additional step here is the exact all-spin-sector reduction with singlet padding and its operational use to bound arbitrary encoders and adaptive protocols. The large-$n$ erasure constant agrees with inherited pure-loss structure; it is not claimed as a new bosonic constant.
+The paper's channel is a bosonic loss/amplifier channel with an energy constraint. It does not state the theorem for a **physically applied full permutation twirl on arbitrary $`n`$-qubit inputs**, followed by independent qubit noise. The additional step here is the exact all-spin-sector reduction with singlet padding and its operational use to bound arbitrary encoders and adaptive protocols. The large-$`n`$ erasure constant agrees with inherited pure-loss structure; it is not claimed as a new bosonic constant.
 
 ## Positional uncertainty and message counting
 
 **A. Diebra, D. González-Lociga, M. Hillery, J. Calsamiglia, E. Bagan, [Quantum-Enhanced Zero-Error Communication and Storage under Positional Uncertainty](https://arxiv.org/abs/2605.28945), arXiv:2605.28945v1 (27 May 2026).**
 
-This is the closest physical framing. It counts **zero-error classical messages encoded into quantum states** under permutation uncertainty, with variants for unaffected ancillas and dense coding. It does not compute the coherent quantum capacity under independent local noise. Its zero-error message count must not be identified with $Q$ or $Q_2$ in this repository.
+This is the closest physical framing. It counts **zero-error classical messages encoded into quantum states** under permutation uncertainty, with variants for unaffected ancillas and dense coding. It does not compute the coherent quantum capacity under independent local noise. Its zero-error message count must not be identified with $`Q`$ or $`Q_2`$ in this repository.
 
 ## Symmetric depolarization and Gaussian limits
 
@@ -42,7 +42,7 @@ Positive replacer components and their optimization are related to known quantum
 
 ## What survives the comparison
 
-The new physical-channel contribution is the reference-stable reduction of every qubit spin sector to a symmetric input plus locally generated singlet padding, followed by (i) exact finite-$n$ flagged-erasure capacities for arbitrary encoders, (ii) a size-independent quantum ceiling and adaptive fidelity bound for general independent replacement-component noise, and (iii) a constructive classical-growth contrast.
+The new physical-channel contribution is the reference-stable reduction of every qubit spin sector to a symmetric input plus locally generated singlet padding, followed by (i) exact finite-$`n`$ flagged-erasure capacities for arbitrary encoders, (ii) a size-independent quantum ceiling and adaptive fidelity bound for general independent replacement-component noise, and (iii) a constructive classical-growth contrast.
 
 The symmetric-loss Choi spectra, sector entanglement, reverse hashing, covariant simulation, and local replacement decompositions are explicitly credited. A short proof after those ingredients are supplied is not itself evidence against a consequential physical result, but priority and significance remain subject to independent expert evaluation.
 
