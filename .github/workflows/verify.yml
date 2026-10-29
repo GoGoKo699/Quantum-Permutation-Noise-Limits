@@ -15,5 +15,7 @@ jobs:
           python-version: '3.12'
       - name: Install pinned dependency
         run: python -m pip install -r verification/requirements.txt
+      - name: Check learning map and source links
+        run: python verification/check_docs.py
       - name: Check conditional loss and finite rates
         run: python verification/checks.py --max-spin 12
