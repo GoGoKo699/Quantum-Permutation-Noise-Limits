@@ -18,27 +18,28 @@ The erased-particle count $L$ is binomial:
 
 The exact two-way rate is
 
-$$
-Q_2=\log_2 3-\frac12\log_2 2-\frac14\log_2 3
-=\frac34\log_2 3-\frac12\approx0.68872
-$$
-
+```math
+\begin{aligned}
+Q_2
+&=\log_2 3-\frac12\log_2 2-\frac14\log_2 3\\
+&=\frac34\log_2 3-\frac12
+\approx0.68872.
+\end{aligned}
+```
 qubits per two-carrier block. The unassisted rate is $Q=0$ because the erasure probability is $1/2$. This contrast concerns the availability of free classical feedback, not the number of qubits physically sent.
 
 ## Example 3 — the EB CP-order ceiling
 
 For $n=2$ and replacement probability $q=1/2$,
 
-$$
+```math
 K_2(q)=1+(1-q)+(1-q)^2=1+\frac12+\frac14=\frac74.
-$$
-
+```
 For $t$ independent blocks, even an adaptive two-way LOCC protocol attempting to share a maximally entangled state of rank $D$ obeys
 
-$$
+```math
 F\le\min\{1,(7/4)^t/D\}.
-$$
-
+```
 The rate threshold from this **fidelity** bound is $\log_2(7/4)\approx0.80735$ qubits per block, larger than the exact flagged-erasure capacity $0.68872$ in Example 2. The difference illustrates why one must not claim the strong converse is already sharp at $f_n$.
 
 ## Example 4 — two different limits
