@@ -17,7 +17,7 @@ For fixed $`q>0`$, the typical loss count is proportional to $`n`$. The ratio $`
 
 ## Assistance makes a qualitative difference
 
-For erasure, classical feedback lets Bob announce which loss count occurred and use reverse hashing. This gives the limiting rate $`-\log_2q`$ for every fixed $`0<q<1`$.
+For erasure, classical feedback lets Bob announce which loss count occurred and use reverse hashing. This gives the limiting rate $`-\log_2q`$ for every fixed $`0\lt q\lt1`$.
 
 Without free classical feedback, the unassisted rate is
 

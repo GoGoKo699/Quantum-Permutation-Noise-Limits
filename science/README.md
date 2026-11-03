@@ -13,6 +13,7 @@ The answer separates positional twirling, loss of individual carriers, and unfla
 5. [Unflagged local noise](replacement_noise.md): the universal finite-block bound and the adaptive strong-converse inequality.
 6. [Classical information survives](classical_contrast.md): a constructive tomography code and an effective-dimension upper bound.
 7. [Physical interpretation and scope](interpretation.md): why fixed microscopic loss changes the scaling.
+8. [Finite-deformation physical erasure](finite_deformation_erasure.md): exact small-sector loss maps, a strict two-spin rate improvement, and the shared all-sector size-independent ceiling with Quantum Group Memory Laws.
 
 The [closest-work analysis](../references/RELATED_WORK.md) distinguishes the new physical-channel reduction from inherited results. [Verification](../verification/README.md) gives executable finite checks and their limits.
 
@@ -45,3 +46,14 @@ K_n(q)&=\sum_{a=0}^n(1-q)^a.
 For $`t`$ independent calls, an arbitrary two-way adaptive protocol targeting Schmidt rank $`D`$ has unconditional entanglement fidelity $`F\le K_n(q)^t/D`$. The exact erasure benchmark approaches $`-\log_2q`$ at fixed $`q>0`$, making the size-independent ceiling sharp as a statement about the family of replacer-containing channels.
 
 These statements are distinct from a claim of exact depolarizing capacity or an optimal classical-message exponent.
+
+## Finite-deformation sister theorem
+
+The [sister account](finite_deformation_erasure.md) replaces the physical twirl by the full real-deformation conditional expectation $`\Pi_r`$, using finite $`r>1`$ and erasure probability $`p`$. Its physical embedding changes the conditional loss channel and finite-block achievable rates. Nevertheless, for every fixed $`r,p`$,
+
+```math
+1-h_2(p/2)\le Q_2(\mathcal E_p^{\otimes n}\circ\Pi_r)
+\le C(r,p)\lt\infty
+```
+
+uniformly in $`n`$. The full first-mismatch/posterior-entropy proof is owned by [Quantum Group Memory Laws](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/06ff5a0621ccb9b57c89f7a895bc497c8305fb12/science/first_mismatch.md); the local account gives the definitions, exact channel tests and essential capacity argument. It preserves the ordinary exact formulas above as the $`r=1`$ benchmark and makes no local-loss equivalence from a global algebra isomorphism.

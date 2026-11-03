@@ -5,13 +5,15 @@ const cp = require('node:child_process');
 const crypto = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
 const COUNTS = {
-  'README.md': [2,28], 'learning/MILESTONES.md':[0,0],
-  'learning/WATROUS_BRIDGE.md':[0,25], 'learning/WORKED_EXAMPLES.md':[3,32],
-  'references/RELATED_WORK.md':[0,5], 'science/README.md':[3,11],
+  'README.md': [3,32], 'learning/MILESTONES.md':[0,0],
+  'learning/WATROUS_BRIDGE.md':[0,28], 'learning/WORKED_EXAMPLES.md':[6,43],
+  'references/RELATED_WORK.md':[0,5], 'science/README.md':[4,17],
   'science/classical_contrast.md':[7,19], 'science/erasure_capacities.md':[14,65],
-  'science/interpretation.md':[2,29], 'science/model.md':[6,45],
+  'science/finite_deformation_erasure.md':[17,101],
+  'science/interpretation.md':[2,29], 'science/model.md':[6,53],
   'science/replacement_noise.md':[12,48], 'science/schur_reduction.md':[5,41],
-  'science/symmetric_loss.md':[13,36], 'verification/README.md':[0,18]
+  'science/symmetric_loss.md':[13,36], 'verification/README.md':[0,21],
+  'verification/hosted/README.md':[0,0]
 };
 function trackedPages(){return cp.execFileSync('git',['ls-files','*.md'],{cwd:ROOT,encoding:'utf8'}).trim().split('\n').filter(Boolean);}
 function expressions(source, allowLegacy=false){

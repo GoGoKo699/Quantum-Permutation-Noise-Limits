@@ -63,7 +63,7 @@ C(\mathcal A^{\otimes n}\circ\mathcal P_n)
 ```
 for any identical local CPTP map $`\mathcal A`$, with no preshared entanglement. This upper bound concerns classical communication **without a free classical side channel**.
 
-Together, (17) and (18) show that for every fixed $`0<q<1`$, classical information grows logarithmically with block size while coherent quantum capacity stays bounded by [Eq. (16)](replacement_noise.md#arbitrary-adaptive-protocols). The precise classical exponent between these bounds is not needed for the physical quantum/classical separation.
+Together, (17) and (18) show that for every fixed $`0\lt q\lt1`$, classical information grows logarithmically with block size while coherent quantum capacity stays bounded by [Eq. (16)](replacement_noise.md#arbitrary-adaptive-protocols). The precise classical exponent between these bounds is not needed for the physical quantum/classical separation.
 
 ## Different communication questions
 

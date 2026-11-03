@@ -9,8 +9,8 @@ permissions:
 
 jobs:
   hosted-browser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,16 +18,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Preserve exact public source for source-to-render comparison
-        run: |
-          mkdir -p hosted-math-audit/source
-          git archive HEAD | tar -x -C hosted-math-audit/source
       - name: Install pinned browser and math compiler
         run: |
-          npm install --no-save --no-package-lock playwright@1.56.1 mathjax-full@3.2.1
-          npx playwright install --with-deps chromium
+          npm install --prefix /tmp/hosted-dependencies --no-save --no-package-lock playwright@1.56.1 mathjax-full@3.2.1
+          /tmp/hosted-dependencies/node_modules/.bin/playwright install --with-deps chromium
       - name: Compare every expression with the actual GitHub MathML
-        run: node verification/hosted_math_audit.cjs
+        env:
+          NODE_PATH: /tmp/hosted-dependencies/node_modules
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t pages < <(git ls-tree -r --name-only HEAD | python -c 'import sys; print("\n".join(p for p in sys.stdin.read().splitlines() if p.endswith(".md") and p != "AGENTS.md"))')
+          args=()
+          for page in "${pages[@]}"; do args+=(--page "$page"); done
+          node verification/hosted/capture_hosted_math.cjs --root . --repository GoGoKo699/Quantum-Permutation-Noise-Limits --revision "$(git rev-parse HEAD)" --output hosted-math-audit "${args[@]}"
       - name: Save rendered HTML, observations and screenshots
         if: always()
         uses: actions/upload-artifact@v4

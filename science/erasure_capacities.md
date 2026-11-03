@@ -121,7 +121,7 @@ For $`q\ge1/2`$, single-qubit erasure is antidegradable. Tensor products remain 
 
 ## Limits and crossover
 
-For fixed $`0<q<1`$, binomial concentration gives
+For fixed $`0\lt q\lt1`$, binomial concentration gives
 
 **Equation (8).**
 

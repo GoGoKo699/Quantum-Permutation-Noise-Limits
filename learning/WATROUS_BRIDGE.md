@@ -1,8 +1,10 @@
-# Watrous bridge — from quantum channels to noisy permutation limits
+# Watrous bridge — physical projections, erasure and communication
 
 **Single educational anchor:** John Watrous, *The Theory of Quantum Information* (Cambridge University Press, 2018). [Author's freely accessible prepublication copy](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf) (personal use; do not redistribute). This bridge follows the book's actual 2018 chapter and section headings; it is not a claim that Watrous already proves this project's results.
 
 The common [30-milestone map](MILESTONES.md) points here for foundations and to the [scientific account](../science/README.md) for research-specific proofs. The reader may start with the [worked examples](WORKED_EXAMPLES.md).
+
+This is also the common educational source for the sister project [Quantum Group Memory Laws](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws). Here the route emphasizes operational channel comparison: the ordinary permutation theorem and what changes under finite real deformation. The sister route begins with conserved algebras and their physical projection. Sharing the source does not turn the two project-specific milestone maps into one course or attribute the research-level CG and entropy arguments to the textbook.
 
 ## Route through the selected book
 
@@ -36,6 +38,7 @@ Watrous typically denotes registers by calligraphic spaces such as $`\mathcal X,
 | $`\mathcal N\preceq_{\rm CP}c\mathcal T`$ | $`c\mathcal T-\mathcal N`$ is completely positive, equivalently its Choi operator is positive |
 | $`V_j,M_j`$ | Spin-$`j`$ representation and its permutation multiplicity, respectively; distinct from physical carrier labels |
 | $`Q,Q_2,C`$ | Unassisted quantum, two-way-classically-assisted quantum, and unassisted classical capacities **per entire block** |
+| $`r,p,\Pi_r`$ in the sister chapter | Fixed finite real deformation, erasure probability, and full physical-trace symmetry conditional expectation; the ordinary noise symbol is $`q=p`$ at $`r=1`$ |
 
 **Choi normalization matters.** The numerical verifier uses **unnormalized** Choi matrices with $`\mathrm{Tr}J=d_{\rm in}`$, whereas the entropy and resource formulas use **normalized** Choi states with trace one. Multiply/divide by $`d_{\rm in}`$ when comparing them. This is not a change in the CP-order inequality.
 
@@ -49,9 +52,21 @@ Watrous typically denotes registers by calligraphic spaces such as $`\mathcal X,
 4. **Direct-sum degradable enhancement.** The [unassisted converse](../science/erasure_capacities.md) builds a separately enhanced channel with a spin label. It does **not** claim that the original physical twirl is degradable.
 5. **Uniform EB domination.** The [replacer theorem](../science/replacement_noise.md) tilts the conditional erasure weights to make a **trace-preserving** EB comparator; omitting that normalization would invalidate the adaptive fidelity proof.
 6. **Classical comparison.** The [Bloch-grid code](../science/classical_contrast.md) is a direct concentration argument. It demonstrates classical growth without claiming an optimal classical exponent.
+7. **Finite-deformation physical loss.** The [sister channel account](../science/finite_deformation_erasure.md) supplies the actual CG embedding and mixed-multiplicity Kraus maps. The same abstract retained matrix blocks do not determine local erasure. The changed two-spin Choi spectrum and three-spin end/middle spectra give explicit tests.
+8. **Posterior entropy and adaptive capacity.** Watrous §§2.1.3, 2.2.2 and 5.1–5.2 explain the purification, measurement and entropy language. The uniform first-erased-mismatch estimate is a supplied project proof; channel squashed entanglement and its adaptive two-way-capacity upper bound are research-level inputs of Takeoka–Guha–Wilde. They are not inferred merely from the textbook's treatment of conditional entropy.
+
+## Bridge through the sister result
+
+Start with the familiar fact that a channel on one half of an entangled state must be specified on every reference extension. Apply Watrous §2.2.2 to the conditional Kraus map in [the exact small-sector section](../science/finite_deformation_erasure.md#2-exact-conditional-physical-loss-maps). At two spins the spin-one embedding is unchanged as an abstract qutrit but its physical middle vector depends on deformation. A partial trace therefore changes the normalized Choi spectrum. This directly explains why the ordinary symmetric-loss formula needs new justification.
+
+Next use §§2.1.3 and 5.1–5.2 for the complementary-system argument. After measuring sector/multiplicity labels and the erased physical spins in a Stinespring environment, the conditional reference-survivor state is pure. Different logical weights leave different survivor magnetizations, so their survivor vectors are orthogonal. The reference entropy is at most the posterior entropy of the logical weight. The [first-mismatch estimate and capacity route](../science/finite_deformation_erasure.md#3-a-uniform-all-sector-ceiling) bound that posterior uniformly for every prior and then invoke the inherited channel squashed-entanglement theorem. The environment measurement constructs a mathematical converse; it gives Bob no free physical access.
+
+Finally connect the lower bound to the same resource language. The vacuum/one-excitation code gives a flagged amplitude-damping qubit channel, whose reverse-hashing rate is positive for every erasure probability below one. The upper and lower bounds establish bounded positive scaling, while the sharp finite-deformation capacity remains undetermined. Neither a local autocorrelation nor a global algebra isomorphism supplies this conclusion.
 
 ## A proof itinerary, not a prerequisite marathon
 
 First read Watrous §§2.2 and 7.1 to understand the physical twirl, then [the spin reduction](../science/schur_reduction.md). Read §§5.2, 6.1–6.2 and 7.2 alongside the [symmetric-loss resource](../science/symmetric_loss.md). Use §8.2 to interpret the two capacity formulas in [erasure capacities](../science/erasure_capacities.md). Finally return to the [replacer strong converse](../science/replacement_noise.md) and [classical contrast](../science/classical_contrast.md). At each stage, consult only the relevant textbook section and the linked proof; the entire book is not an entrance requirement.
 
 **Scientific boundary:** a positive replacer component is a sufficient hypothesis for the universal noise ceiling. The exact formulas are for flagged erasure; the unflagged depolarizing capacity is not solved. The finite-block strong-converse threshold $`\log_2K_n`$ may exceed the tighter capacity bound $`f_n`$.
+
+For the deformed extension, the supplied stationary channel has a size-independent two-way ceiling at fixed finite deformation and positive erasure. Replacing stationarity by finite-time local dynamics requires an independent mixing-time and accumulated-error account. The prior ordinary exact formulas remain restricted to their original permutation channel.
