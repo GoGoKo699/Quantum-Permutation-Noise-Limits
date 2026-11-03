@@ -4,12 +4,17 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   finite-checks:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -26,3 +31,5 @@ jobs:
         run: node verification/check_math_render.cjs
       - name: Check conditional loss and finite rates
         run: python verification/checks.py --max-spin 12
+      - name: Check deformed physical loss maps and achievable rates
+        run: python verification/check_deformed_erasure.py

@@ -12,6 +12,12 @@ Authoritative scientific routes:
 - Replacer-containing local noise, CP order, adaptive strong-converse fidelity: science/replacement_noise.md
 - Constructive classical-message growth and output-dimension upper bound: science/classical_contrast.md
 - Physical story, crossover and scope: science/interpretation.md
+- Finite real-deformation physical projection, exact conditional loss, strict two-spin achievable-rate improvement, all-sector entropy ceiling, positive lower bound and finite-time limitation: science/finite_deformation_erasure.md
+
+Sister relationship:
+- Quantum-Group-Memory-Laws: https://github.com/GoGoKo699/Quantum-Group-Memory-Laws
+- The sister owns the full first-mismatch/posterior theorem at science/first_mismatch.md and direct full-channel capacity consequence at science/capacity.md; the versioned links are in science/finite_deformation_erasure.md.
+- This repository owns the ordinary Schur/symmetric-loss benchmark and operational comparison. This is one shared deformed all-sector result with two complementary accounts.
 
 Shared learning routes (single anchor: John Watrous, The Theory of Quantum Information, 2018):
 - Source sections and translation to this project: learning/WATROUS_BRIDGE.md
@@ -32,4 +38,8 @@ Critical distinctions:
 - The exact unassisted formula is for flagged erasure; the depolarizing capacity is not determined.
 - Fixed positive q and q scaling like c/n have different limits.
 - Symmetric loss/resource identities and sector simulation are credited to existing work.
+- The deformed chapter uses r for deformation and p for erasure; ordinary chapters retain q for noise probability.
+- Equal conserved-algebra dimensions or a global algebra isomorphism do not equate physical local-erasure channels.
+- The finite-r theorem bounds arbitrary encoders and adaptive two-way communication; local autocorrelation is not a capacity proxy.
+- The deformed exact capacity and sharp ceiling remain undetermined; a finite-time realization requires a separate mixing-time/error account.
 - Personal coaching instructions and learner records do not belong in this repository.

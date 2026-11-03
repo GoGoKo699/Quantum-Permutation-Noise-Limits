@@ -26,7 +26,7 @@ for(const file of trackedPages()){
     }
   }
 }
-if(displays!==67||inline!==402)throw new Error('Incomplete source coverage');
+if(displays!==89||inline!==538)throw new Error('Incomplete source coverage');
 
 // Negative regression checks for the three defects observed on the live host.
 const readme=fs.readFileSync(path.join(ROOT,'README.md'),'utf8');

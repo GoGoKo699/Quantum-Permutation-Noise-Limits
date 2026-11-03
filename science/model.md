@@ -58,3 +58,7 @@ The model excludes an uncharged noiseless quantum bypass, initially shared ebits
 ## A simple example
 
 For $`n=2`$, positional twirling preserves the three-dimensional triplet sector and the one-dimensional singlet sector, but removes coherence between them. A receiver can transmit one coherent qutrit through the triplet when $`q=0`$, hence $`Q_2=Q=\log_2 3`$ qubits per two-carrier block. For general $`n`$, the largest noiseless spin sector has dimension $`n+1`$, giving $`Q(\mathcal P_n)=Q_2(\mathcal P_n)=\log_2(n+1)`$. The subsequent pages show how any fixed $`q>0`$ changes this growth.
+
+## A separate finite-deformation physical channel
+
+The [sister extension](finite_deformation_erasure.md) uses $`r`$ for fixed finite real deformation and $`p`$ for erasure probability. Its supplied stationary conditional expectation $`\Pi_r`$ retains the same matrix-block dimensions with a different physical Clebsch–Gordan embedding. The communication channel is $`\mathcal E_p^{\otimes n}\circ\Pi_r`$, with the same per-block, reference and LOCC conventions as above. At $`r=1`$, $`\Pi_1=\mathcal P_n`$ and the ordinary formulas use $`q=p`$. At $`r>1`$, the exact ordinary capacity formulas and the physical singlet-padding reduction are not assumed; the new chapter supplies the appropriate local maps and a different all-sector converse.

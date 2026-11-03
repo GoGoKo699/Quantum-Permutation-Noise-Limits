@@ -1,6 +1,6 @@
 # Related work and attribution
 
-The comparison concerns the **operational model and theorem**, not whether another work uses the words permutation, loss, or symmetry. This review identifies the closest inspected sources as of 29 October 2026; it is not an exhaustive priority certificate.
+The comparison concerns the **operational model and theorem**, not whether another work uses the words permutation, loss, or symmetry. This review identifies the closest inspected sources for the ordinary result as of 29 October 2026 and the finite-deformation extension as of 3 November 2026; it is not an exhaustive priority certificate.
 
 ## The most important inherited result
 
@@ -40,10 +40,20 @@ Symmetric partial trace, coherent-state measure/prepare approximations, cloning,
 
 Positive replacer components and their optimization are related to known quantum Doeblin coefficients. This project does not claim to invent the decomposition or its computability. The new bound combines that component with a physical positional twirl and an all-spin-sector CP comparison.
 
+## Finite real-deformation sister theorem
+
+**[Quantum Group Memory Laws](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws)** supplies the full ordinary-physical-trace conditional expectation onto the real-deformation symmetry algebra and its local stationary realization. Its spatial autocorrelation laws concern overlap with conserved operators; they are not quantum-capacity estimates. The shared [finite-deformation account](../science/finite_deformation_erasure.md) uses that physical projection as a channel, computes reference-stable local-loss maps, and establishes a size-independent two-way ceiling by a first-erased-CG-mismatch posterior bound. The sister owns the [full probability proof](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/6b592787b784214bec25214c72aee2c5d43991af/science/first_mismatch.md) and [direct full-channel consequence](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/6b592787b784214bec25214c72aee2c5d43991af/science/capacity.md); this repository retains the ordinary exact theorem and operational comparison. The new theorem is counted once across those accounts.
+
+**David Raveh and Rafael I. Nepomechie, [q-analog qudit Dicke states](https://arxiv.org/abs/2308.08392v2), arXiv:2308.08392v2; Journal of Physics A 57, 065302 (2024).** Sections 3–4 and Appendix B provide weighted-inversion amplitudes, recursion and contiguous-bipartition Schmidt geometry. These are established finite-deformation state tools. They do not bound arbitrary erased subsets and every multiplicity path in the full physical projection.
+
+**Masahiro Takeoka, Saikat Guha and Mark M. Wilde, [The squashed entanglement of a quantum channel](https://arxiv.org/abs/1310.0129v3), IEEE Transactions on Information Theory 60, 4987–4998 (2014).** Definition 1, Theorem 7 and Theorem 9 supply channel squashed entanglement, its operational properties and the upper bound on two-way quantum capacity under adaptive LOCC. The new model-specific ingredient is a uniform posterior-entropy bound from the lost physical spins, followed by an explicit squashing map for the complete sector/multiplicity environment. The general entanglement-measure/capacity theorem is inherited.
+
+The ordinary symmetric-loss formula is not carried over by changing notation: already at two spins its conditional Choi spectrum changes and an achievable deformed full-block rate exceeds the exact ordinary rate. Equal global algebra dimensions, a different inner product, or an infinite-deformation generator limit do not establish a physical local-loss equivalence. The finite-deformation theorem gives bounded scaling and a positive lower bound, not the sharp ceiling or exact deformed capacities.
+
 ## What survives the comparison
 
 The new physical-channel contribution is the reference-stable reduction of every qubit spin sector to a symmetric input plus locally generated singlet padding, followed by (i) exact finite-$`n`$ flagged-erasure capacities for arbitrary encoders, (ii) a size-independent quantum ceiling and adaptive fidelity bound for general independent replacement-component noise, and (iii) a constructive classical-growth contrast.
 
-The symmetric-loss Choi spectra, sector entanglement, reverse hashing, covariant simulation, and local replacement decompositions are explicitly credited. A short proof after those ingredients are supplied is not itself evidence against a consequential physical result, but priority and significance remain subject to independent expert evaluation.
+The symmetric-loss Choi spectra, sector entanglement, reverse hashing, covariant simulation, and local replacement decompositions are explicitly credited. The sister extension adds a different all-sector physical-erasure converse for fixed finite deformation, while preserving those original ownership boundaries. Priority, correctness and significance remain subject to independent expert evaluation.
 
 See [bibliographic records](references.bib) and [proof routes](../science/README.md).
