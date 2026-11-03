@@ -4,9 +4,7 @@ The read-only collector visits commit-pinned public GitHub pages at widths 1440 
 
 Install `playwright@1.56.1` and `mathjax-full@3.2.1` outside the source tree, install Chromium, then run:
 
-```sh
-node verification/hosted/capture_hosted_math.cjs --root . --repository GoGoKo699/Quantum-Permutation-Noise-Limits --revision FULL_COMMIT_SHA --output hosted-math-audit --page README.md
-```
+    node verification/hosted/capture_hosted_math.cjs --root . --repository GoGoKo699/Quantum-Permutation-Noise-Limits --revision FULL_COMMIT_SHA --output hosted-math-audit --page README.md
 
 Repeat `--page` to cover all active science, learning, reference and verification pages. The workflow records its full page inventory. Use a new empty output directory for every attempt.
 
