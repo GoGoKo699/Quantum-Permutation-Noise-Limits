@@ -56,4 +56,4 @@ The [sister account](finite_deformation_erasure.md) replaces the physical twirl 
 \le C(r,p)\lt\infty
 ```
 
-uniformly in $`n`$. The full first-mismatch/posterior-entropy proof is owned by [Quantum Group Memory Laws](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/b406c50d3e69de67ee063b64d3659f915107e1b2/science/first_mismatch.md); the local account gives the definitions, exact channel tests and essential capacity argument. It preserves the ordinary exact formulas above as the $`r=1`$ benchmark and makes no local-loss equivalence from a global algebra isomorphism.
+uniformly in $`n`$. The full first-mismatch/posterior-entropy proof is owned by [Quantum Group Memory Laws](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/06ff5a0621ccb9b57c89f7a895bc497c8305fb12/science/first_mismatch.md); the local account gives the definitions, exact channel tests and essential capacity argument. It preserves the ordinary exact formulas above as the $`r=1`$ benchmark and makes no local-loss equivalence from a global algebra isomorphism.

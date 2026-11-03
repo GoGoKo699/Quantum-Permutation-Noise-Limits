@@ -13,7 +13,7 @@ The result applies to **arbitrary encodings and reference-entangled inputs**, no
 \le C(r,p)\lt\infty,
 ```
 
-uniformly in block size. The deformed physical loss maps are different: an explicit two-spin achievable rate strictly exceeds the ordinary exact value. The [operational sister account](science/finite_deformation_erasure.md) derives those maps, explains the full-channel entropy converse and positive lower bound, and separates stationarity from finite-time mixing. Quantum Group Memory Laws owns the [full first-mismatch proof](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/b406c50d3e69de67ee063b64d3659f915107e1b2/science/first_mismatch.md); this repository owns the ordinary Schur/symmetric-loss benchmark and operational comparison. Both use Watrous (2018) as their common educational anchor.
+uniformly in block size. The deformed physical loss maps are different: an explicit two-spin achievable rate strictly exceeds the ordinary exact value. The [operational sister account](science/finite_deformation_erasure.md) derives those maps, explains the full-channel entropy converse and positive lower bound, and separates stationarity from finite-time mixing. Quantum Group Memory Laws owns the [full first-mismatch proof](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/06ff5a0621ccb9b57c89f7a895bc497c8305fb12/science/first_mismatch.md); this repository owns the ordinary Schur/symmetric-loss benchmark and operational comparison. Both use Watrous (2018) as their common educational anchor.
 
 ## Main results
 

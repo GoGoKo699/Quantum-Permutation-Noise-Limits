@@ -9,8 +9,8 @@ small sectors, and gives the operational proof route.
 
 The shared all-sector theorem and its full probability proof have their
 authoritative home in **Quantum Group Memory Laws**:
-[first-mismatch theorem](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/b406c50d3e69de67ee063b64d3659f915107e1b2/science/first_mismatch.md)
-and [capacity consequence](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/b406c50d3e69de67ee063b64d3659f915107e1b2/science/capacity.md).
+[first-mismatch theorem](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/06ff5a0621ccb9b57c89f7a895bc497c8305fb12/science/first_mismatch.md)
+and [capacity consequence](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/06ff5a0621ccb9b57c89f7a895bc497c8305fb12/science/capacity.md).
 The present repository owns the ordinary Schur/symmetric-loss benchmark and this
 operational comparison. The two accounts retain their own definitions and
 essential arguments; they describe one shared finite-deformation result.
